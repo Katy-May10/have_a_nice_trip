@@ -1,0 +1,15 @@
+<%= render "shared/header"%>
+
+<%= form_with model: @itinerary, local: true do |f| %>
+  <div class="full-in-form">
+    <div class="location-form">
+      <%= f.text_area :location, class:"itinerary-text", id:"location", placeholder:"例）沖縄旅行2024" %>
+    </div>
+    <div class="date-form"> 
+      <%= f.text_area :date, class:"itinerary-text", id:"date", placeholder:"例）2024/11/15~11/17" %>
+    </div>
+    <div class="itinerary-button">
+      <%= f.submit "保存する", class:"save-btn"%>
+    </div>
+  </div>
+<% end %>
