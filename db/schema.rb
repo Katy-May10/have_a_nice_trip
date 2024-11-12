@@ -25,9 +25,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_12_024312) do
     t.string "time"
     t.text "content", null: false
     t.bigint "itinerary_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["itinerary_id"], name: "index_plans_on_itinerary_id"
+    t.index ["user_id"], name: "index_plans_on_user_id"
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
@@ -45,4 +47,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_12_024312) do
 
   add_foreign_key "itineraries", "users"
   add_foreign_key "plans", "itineraries"
+  add_foreign_key "plans", "users"
 end
