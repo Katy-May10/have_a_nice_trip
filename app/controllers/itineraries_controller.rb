@@ -9,10 +9,11 @@ class ItinerariesController < ApplicationController
 
   def create
     @itinerary = Itinerary.new(itinerary_params)
+    redirect_to :show
   end
 
   def show
-
+    @itinerary = Itinerary.find[:id]
   end
 
   private
