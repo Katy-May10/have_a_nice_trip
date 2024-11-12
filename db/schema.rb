@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_11_11_024140) do
-  create_table "itineraries", charset: "utf8", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2024_11_12_024312) do
+  create_table "itineraries", charset: "utf8mb3", force: :cascade do |t|
     t.string "location", null: false
     t.date "date"
     t.bigint "user_id", null: false
@@ -20,7 +20,19 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_11_024140) do
     t.index ["user_id"], name: "index_itineraries_on_user_id"
   end
 
-  create_table "users", charset: "utf8", force: :cascade do |t|
+  create_table "plans", charset: "utf8mb3", force: :cascade do |t|
+    t.integer "icon_id", null: false
+    t.string "time"
+    t.text "content", null: false
+    t.bigint "itinerary_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["itinerary_id"], name: "index_plans_on_itinerary_id"
+    t.index ["user_id"], name: "index_plans_on_user_id"
+  end
+
+  create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "nickname", null: false
@@ -34,4 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_11_024140) do
   end
 
   add_foreign_key "itineraries", "users"
+  add_foreign_key "plans", "itineraries"
+  add_foreign_key "plans", "users"
 end

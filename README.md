@@ -55,10 +55,13 @@ Have a nice trip!
 
 ### Association
 - has_many :itineraries
+- has_many :plans
 - has_many :lists
+- has_many :spots
 - has_many :prepares
 - has_many :souvenirs
 - has_many :records
+- has_many :memories
 
 
 ## itineraries テーブル
@@ -81,9 +84,11 @@ Have a nice trip!
 | time      | string     |             |
 | content   | text       | null: false |
 | itinerary | references | null: false, foreign_key: true |
+| user      | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :itinerary
+- belongs_to :user
 
 ## lists テーブル
 
@@ -98,13 +103,15 @@ Have a nice trip!
 
 ## spots テーブル
 
-| Column | Type | Options |
-| ------ | ---- | ------- |
-| suggestion | text | null: false |
-| list | references | null: false, foreign_key |
+| Column     | Type       | Options     |
+| ---------- | ---------- | ----------- |
+| suggestion | text       | null: false |
+| list       | references | null: false, foreign_key |
+| user       | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :list
+- belongs_to :user
 
 ## prepares テーブル
 
@@ -139,10 +146,12 @@ Have a nice trip!
 
 ## memories テーブル
 
-| Column | Type | Options |
-| ------ | ---- | ------- |
-| comment | string |  null: false|
-| record | references | null:false, foreign_key: true |
+| Column  | Type       | Options     |
+| ------- | ---------- | ----------- |
+| comment | string     |  null: false|
+| record  | references | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
 
 ### Association
 -belongs_to :record
+-belongs_to :user
