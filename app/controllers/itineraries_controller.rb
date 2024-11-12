@@ -14,6 +14,8 @@ class ItinerariesController < ApplicationController
 
   def show
     @itinerary = Itinerary.find[:id]
+    @plan = Plan.new
+    @plans = @itinerary.plans
   end
 
   private
