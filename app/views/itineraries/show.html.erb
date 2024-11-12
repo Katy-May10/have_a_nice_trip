@@ -10,4 +10,23 @@
       <%= @itinerary.date%>
     </div>
   </div>
+  <div class="container">
+    <% if user_signed_in? && current_user.id %>
+      <%= form_with(model: [@itinerary, @plan], local: true) do |form| %>
+        <%= form.text_area :time, placeholder: "10:00~11:00", rows: "1"%>
+        <%= form.text_area :text, placeholder: "東京駅→大阪　新幹線で移動" %>
+        <%= form.submit "保存する"%>
+      <% end %>
+    <% end %>
+
+    <div class="plans">
+      <% @plans.each do |plan| %>
+        <p>
+          <%= plan.icon_id %>
+          <%= plan.time %>
+          <%= plan.content %>
+        <p>
+      <% end %>
+    </div>
+  </div>
 </div>
