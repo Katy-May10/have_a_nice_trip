@@ -95,7 +95,7 @@ Have a nice trip!
 | Column      | Type       | Options     |
 | ----------- | ---------- | ----------- |
 | sightseeing | string     | null: false |
-| user        | references | null:false, foreign_key: true |
+| user        | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -106,7 +106,7 @@ Have a nice trip!
 | Column     | Type       | Options     |
 | ---------- | ---------- | ----------- |
 | suggestion | text       | null: false |
-| list       | references | null: false, foreign_key |
+| list       | references | null: false, foreign_key: true |
 | user       | references | null: false, foreign_key: true |
 
 ### Association
@@ -115,30 +115,30 @@ Have a nice trip!
 
 ## prepares テーブル
 
-| Column | Type | Options |
-| ------ | ---- | ------- |
-| item | string | null: false |
-| user        | references | null:false, foreign_key: true |
+| Column | Type       | Options     |
+| ------ | ---------- | ----------- |
+| item   | string     | null: false |
+| user   | references | null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user
 
 ## souvenirs テーブル
 
-| Column | Type | Options |
-| ------ | ---- | ------- |
-| who | string | null: false |
-| user        | references | null:false, foreign_key: true |
+| Column | Type       | Options     |
+| ------ | ---------- | ----------- |
+| who    | string     | null: false |
+| user   | references | null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user
 
 ## records テーブル
 
-| Column | Type | Options |
-| ------ | ---- | ------- |
-| title | string | null: false |
-| user        | references | null:false, foreign_key: true |
+| Column | Type       | Options     |
+| ------ | ---------- | ----------- |
+| title  | string     | null: false |
+| user   | references | null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user
