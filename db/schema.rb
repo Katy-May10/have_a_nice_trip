@@ -30,8 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_12_024312) do
     t.index ["itinerary_id"], name: "index_plans_on_itinerary_id"
     t.index ["user_id"], name: "index_plans_on_user_id"
   end
+end
 
-  create_table "users", charset: "utf8", force: :cascade do |t|
 ActiveRecord::Schema[7.0].define(version: 2024_11_10_125736) do
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
