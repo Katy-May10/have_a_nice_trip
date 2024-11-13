@@ -4,12 +4,7 @@
   text-align: center;
 }
 
-.app-image{
+.header{
   width: 60vw;
-  height: 40vh;
-}
-
-.app-logo{
-  width: 10vw;
   height: 10vh;
 }
