@@ -1,6 +1,6 @@
 class Plan < ApplicationRecord
   belongs_to :itinerary
+  belongs_to :user
 
-  validates :icon_id, presence: true
   validates :content, presence: true
 end
