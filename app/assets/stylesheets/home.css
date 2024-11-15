@@ -1,0 +1,57 @@
+.main{
+  font-family: "Zen Kurenaido", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+.top-image{
+  width: 55vw;
+  height: 50vh;
+}
+
+.user-list{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.top-page-main{
+  display: flex;
+  flex-direction: column;
+}
+
+.itinerary-content{
+  border: 1.5px solid black;
+  border-radius: 30px;
+  padding: 1px 10px 1px 10px;
+  text-decoration: none;
+}
+
+.list-content{
+  border: 1.5px solid black;
+  border-radius: 30px;
+  padding: 1px 18px 1px 18px;
+  text-decoration: none;
+}
+
+.prepare-content{
+  border: 1.5px solid black;
+  border-radius: 30px;
+  padding: 1px 42px 1px 42px;
+  text-decoration: none;
+}
+
+.souvenir-content{
+  border: 1.5px solid black;
+  border-radius: 30px;
+  padding: 1px 42px 1px 42px;
+  text-decoration: none;
+}
+
+.record-content{
+  border: 1.5px solid black;
+  border-radius: 30px;
+  padding: 1px 42px 1px 42px;
+  text-decoration: none;
+}
