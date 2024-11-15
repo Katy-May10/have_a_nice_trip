@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :itineraries, only: [:index, :new, :create, :show] do
     resources :plans, only: [:create, :update]
   end
+  resources :lists, only: [:index, :new, :create, :show]
 end
