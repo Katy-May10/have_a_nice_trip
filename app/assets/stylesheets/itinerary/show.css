@@ -1,0 +1,16 @@
+.main{
+  font-family: "Zen Kurenaido", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+.location{
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.date{
+  font-size: 20px;
+  margin: 10px 0;
+}

@@ -1,26 +1,27 @@
 <%= render "shared/header"%>
 
 <%# スケジュール全体を表示 %>
-<div class="schedule-show">
+<div class="main">
   <div class="schedule-title">
-    <h3 class="location">
+    <div class="location-title">
       <%= @itinerary.location %>
-    </h3>
-    <div class="date">
-      <%= @itinerary.date%>
+    </div>
+    <div class="date-title">
+      <%= @itinerary.departure%>-
+      <%= @itinerary.arrival %>
     </div>
   </div>
   <div class="container">
-    <% if user_signed_in? && current_user.id %>
-      <%= form_with(model: [@itinerary, @plan], local: true) do |form| %>
-        <%= form.text_area :time, placeholder: "10:00~11:00", rows: "1"%>
-        <%= form.text_area :content, placeholder: "東京駅→大阪　新幹線で移動" %>
-        <%= form.submit "保存する"%>
-      <% end %>
-    <% end %>
-
     <div class="plans">
-      <h3>スケジュール表</h3>
+      <% if user_signed_in? && current_user.id %>
+        <%= form_with(model: [@itinerary, @plan], local: true) do |form| %>
+          <%= form.text_area :time, placeholder: "10:00~11:00", rows: "1"%>
+          <%= form.text_area :content, placeholder: "東京駅→大阪　新幹線で移動" %>
+          <%= form.submit "保存する"%>
+        <% end %>
+      <% end %>
+
+      <h3>スケジュール</h3>
       <% @plans.each do |plan| %>
         <p>
           <%= plan.time %>
