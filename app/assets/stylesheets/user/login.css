@@ -1,20 +1,26 @@
+.original-logo{
+  width: 50vw;
+  height: 50vh;
+}
+
 .login-btn {
   width: 50%;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .login-lightblue-btn {
   width: 100%;
-  background: #2dbeea;
-  border: 1px solid #2dabea;
-  color: #fff;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  color: #49688D;
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
 }
 
-.login-flash-message {
+.field{
+  margin-top: 5px;
   text-align: center;
-  color: red;
 }
