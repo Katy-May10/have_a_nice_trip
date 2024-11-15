@@ -66,11 +66,12 @@ Have a nice trip!
 
 ## itineraries テーブル
 
-| Column   | Type       | Options     |
-| -------- | ---------- | ----------- |
-| location | string     | null: false |
-| date     | date       |             |
-| user     | references | null: false, foreign_key: true |
+| Column    | Type       | Options     |
+| --------- | ---------- | ----------- |
+| location  | string     | null: false |
+| departure | date       |             |
+| arrival   | date       |             |
+| user      | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
