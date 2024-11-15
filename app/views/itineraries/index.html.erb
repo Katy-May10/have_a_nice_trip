@@ -1,25 +1,26 @@
 <%= render "shared/header"%>
 <div class="main">
-  <div class="itinerary-main">
-    <h1>旅行計画一覧</h1>
-      <%= link_to new_itinerary_path, class: "add-list" do %>
-        <i class="fa-solid fa-plus">新規プラン</i>
-      <% end %>
+  <div class="itinerary-title">
+    旅行計画一覧
+  </div>
+    <%= link_to new_itinerary_path, class: "add-list" do %>
+      <i class="fa-solid fa-plus">新規プラン</i>
+    <% end %>
 
     <ul class="itinerary-lists">
       <% @itineraries.each do |itinerary| %>
       <li class="list">
         <%= link_to itinerary_path(itinerary) do %>
         <div class="itinerary-info">
-          <h5 class="location">
-            <%= itinerary.location %>
-          <h5>
-          <div class="date">
-            <%= itinerary.date %>
+          <div class="location-info">
+            <i class="fa-solid fa-calendar-day"><%= itinerary.location %></i>
+          </div>
+          <div class="date-info">
+            <%= itinerary.departure %>-
+            <%= itinerary.arrival %>
           </div>
         <% end %>
       </li>
       <% end %>
     </ul>
-  </div>
 </div>
