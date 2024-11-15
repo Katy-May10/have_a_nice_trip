@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="eTFFz_wCNvbN2RSVKs7Y" name="ページ1">
-        <mxGraphModel dx="554" dy="647" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="756" dy="647" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -13,7 +13,7 @@
                 <mxCell id="20" value="itinararies" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="370" y="10" width="260" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" value="location, string, NOT NULL&#10;date, date&#10;user, reference, NOT NULL,  foreign_key: true" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="20" vertex="1">
+                <mxCell id="21" value="location, string, NOT NULL&#10;departure, date&#10;arrival, date&#10;user, reference, NOT NULL,  foreign_key: true" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="20" vertex="1">
                     <mxGeometry y="26" width="260" height="84" as="geometry"/>
                 </mxCell>
                 <mxCell id="22" value="memories" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
