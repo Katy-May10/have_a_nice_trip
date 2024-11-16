@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :lists, only: [:index, :new, :create, :show] do
     resources :spots, only: [:create]
   end
+  resources :prepares, only: [:index]
 end
