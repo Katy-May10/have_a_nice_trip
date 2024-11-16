@@ -11,4 +11,9 @@ class PreparesController < ApplicationController
       render :index, status: :unprocessable_entity
     end
   end
+
+  private
+  def prepare_params
+    params.require(:prepare).permit(:item).merge(user_id: current_user.id)
+  end
 end
