@@ -1,0 +1,24 @@
+<%= render "shared/header"%>
+
+<%# 持ち物リストトップ %>
+<div class="main">
+  <div class="prepare-title">
+    <h3>持ち物リスト</h3>
+  </div>
+  <div class="container-prepare">
+    <div class="prepares">
+      <% if user_signed_in? && current_user.id %>
+        <%= form_with(model: @prepare, local: true) do |form| %>
+          <%= form.text_area :item, placeholder: "持ち物を記入する", rows: "1"%>
+          <%= form.submit "保存する"%>
+        <% end %>
+      <% end %>
+
+      <% @prepares.each do |prepare| %>
+        <p>
+          <%= prepare.item %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
