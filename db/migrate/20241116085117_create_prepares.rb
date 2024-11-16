@@ -1,7 +1,8 @@
 class CreatePrepares < ActiveRecord::Migration[7.0]
   def change
     create_table :prepares do |t|
-
+      t.string :item, null: false
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end
