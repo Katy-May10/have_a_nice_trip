@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_11_16_085117) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_16_131512) do
   create_table "itineraries", charset: "utf8mb3", force: :cascade do |t|
     t.string "location", null: false
     t.date "departure"
@@ -48,6 +48,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_16_085117) do
     t.index ["user_id"], name: "index_prepares_on_user_id"
   end
 
+  create_table "souvenirs", charset: "utf8mb3", force: :cascade do |t|
+    t.string "who", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_souvenirs_on_user_id"
+  end
+
   create_table "spots", charset: "utf8mb3", force: :cascade do |t|
     t.text "suggestion", null: false
     t.bigint "list_id", null: false
@@ -76,6 +84,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_16_085117) do
   add_foreign_key "plans", "itineraries"
   add_foreign_key "plans", "users"
   add_foreign_key "prepares", "users"
+  add_foreign_key "souvenirs", "users"
   add_foreign_key "spots", "lists"
   add_foreign_key "spots", "users"
 end
