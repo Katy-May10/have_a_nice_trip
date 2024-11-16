@@ -1,0 +1,2 @@
+class Prepare < ApplicationRecord
+end
