@@ -1,6 +1,7 @@
 class PreparesController < ApplicationController
   def index
     @prepares = Prepare.all
+    @prepare = Prepare.new
   end
 
   def create
