@@ -1,0 +1,2 @@
+class PreparesController < ApplicationController
+end
