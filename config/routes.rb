@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :spots, only: [:create]
   end
   resources :prepares, only: [:index, :create]
+  resources :souvenirs, only: [:index, :create]
 end
