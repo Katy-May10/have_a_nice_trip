@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :plans
   has_many :lists
   has_many :spots
+  has_many :prepares
   
   validates :nickname, presence: true
 end
