@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :itineraries
   has_many :plans
+  has_many :lists
+  has_many :spots
   
   validates :nickname, presence: true
 end
