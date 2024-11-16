@@ -10,7 +10,7 @@ class ListsController < ApplicationController
   def create
     @list = List.new(list_params)
     if @list.save
-      redirect_to list_path(@list)
+      redirect_to list_path(@list.id)
     else
       render :new, status: :unprocessable_entity
     end
@@ -18,6 +18,8 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @spot = Spot.new
+    @spots = @list.spots.includes(:user)
   end
 
   private
