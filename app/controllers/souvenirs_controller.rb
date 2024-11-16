@@ -5,7 +5,7 @@ class SouvenirsController < ApplicationController
   end
 
   def create
-    @souvenir = Souvenir.new(sourvenir_params)
+    @souvenir = Souvenir.new(souvenir_params)
     if @souvenir.save
       redirect_to souvenirs_path(@souvenir.id)
     else
@@ -14,7 +14,7 @@ class SouvenirsController < ApplicationController
   end
 
   private
-  def sourvenir_params
+  def souvenir_params
     params.require(:souvenir).permit(:who).merge(user_id: current_user.id)
   end
 end
