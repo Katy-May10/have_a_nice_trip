@@ -14,10 +14,13 @@
         <% end %>
       <% end %>
 
-      <% @souvenirs.each do |souvenir| %>
-        <p>
-          <%= souvenir.who %>
-        </p>
+      <%= form_with model: @souvenir, local: true do |form| %>
+        <% @souvenirs.each do |souvenir| %>
+          <p>
+            <%= form.check_box souvenir %>
+            <%= souvenir.who %>
+          </p>
+        <% end %>
       <% end %>
     </div>
   </div>

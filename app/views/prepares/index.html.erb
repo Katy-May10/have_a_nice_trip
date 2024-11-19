@@ -14,10 +14,13 @@
         <% end %>
       <% end %>
 
-      <% @prepares.each do |prepare| %>
-        <p>
-          <%= prepare.item %>
-        </p>
+      <%= form_with model: @prepare, local: true do |form| %>
+        <% @prepares.each do |prepare| %>
+          <p>
+            <%= form.check_box prepare %>
+            <%= prepare.item %>
+          </p>
+        <% end %>
       <% end %>
     </div>
   </div>
