@@ -1,26 +1,28 @@
-<%= render "shared/header"%>
-
-<%# スケジュール全体を表示 %>
 <div class="main">
-  <div class="list-title">
-    <div class="sightseeing-title">
-      <%= @list.sightseeing %>
-    </div>
-  </div>
-  <div class="container-spot">
-    <div class="spots">
+  <%# ページイメージ画像 %>
+    <%= image_tag "list-logo.png", class:"logo-image" %>
+
+  <%# 行きたい場所を追加する %>
+  <div class="main-title">
+    <div class="add-data">
       <% if user_signed_in? && current_user.id %>
         <%= form_with(model: [@list, @spot], local: true) do |form| %>
           <%= form.text_area :suggestion, placeholder: "行きたい場所を入力", rows: "1"%>
           <%= form.submit "保存する"%>
         <% end %>
       <% end %>
+    </div>
 
-      <h3>スケジュール</h3>
+    <%# 行きたい場所をすべて表示させる %>
+    <div class="show-title">
+      <%= @list.sightseeing %>
+    </div>
+    <%= image_tag "under-line.png", class:"underline-image" %>
+    <div class="each-lists">
       <% @spots.each do |spot| %>
-        <p>
-          <%= spot.suggestion %>
-        </p>
+        <div class="each-list">
+          ・<%= spot.suggestion %>
+        </div>
       <% end %>
     </div>
   </div>
