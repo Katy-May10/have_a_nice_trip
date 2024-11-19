@@ -1,13 +1,13 @@
 <%= render "shared/header"%>
 <div class="main">
-  <div class="itinerary-title">
+  <div class="index-title">
     旅行計画一覧
   </div>
     <%= link_to new_itinerary_path, class: "add-list" do %>
       <i class="fa-solid fa-plus">新規プラン</i>
     <% end %>
 
-    <ul class="itinerary-lists">
+    <ul class="index-lists">
       <% @itineraries.each do |itinerary| %>
       <li class="list">
         <%= link_to itinerary_path(itinerary) do %>
