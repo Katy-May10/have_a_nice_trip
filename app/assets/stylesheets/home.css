@@ -1,12 +1,5 @@
-.main{
-  font-family: "Zen Kurenaido", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-align: center;
-}
-
 .top-image{
-  width: 55vw;
+  width: 45vw;
   height: 50vh;
 }
 
@@ -54,4 +47,12 @@
   border-radius: 30px;
   padding: 1px 42px 1px 42px;
   text-decoration: none;
+}
+
+/* 全ページ共通 */
+.main{
+  font-family: "Zen Kurenaido", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
 }
