@@ -1,19 +1,25 @@
 <%= render "shared/header"%>
 <div class="main">
-  <div class="sightseeing-title">
-    旅行計画一覧
+  <%# ページイメージ画像 %>
+  <%= image_tag "list-logo.png", class:"logo-image" %>
+
+  <%# トップ %>
+  <div class="index-title">
+    行きたい場所リスト一覧
   </div>
     <%= link_to new_list_path, class: "add-list" do %>
       <i class="fa-solid fa-plus">新規リスト作成</i>
     <% end %>
 
-    <ul class="sightseeing-lists">
+  <%# 行きたい場所をすべて表示させる %>
+    <ul class="index-lists">
       <% @lists.each do |list| %>
       <li class="list">
         <%= link_to list_path(list) do %>
-        <div class="list-info">
-          <div class="sightseeing-info">
-            <i class="fa-regular fa-note-sticky"><%= list.sightseeing %></i>
+        <div class="image-container">
+          <%= image_tag "post-it.png", class:"blue-post-it" %>
+          <div class="text-overlay">
+            <%= list.sightseeing %>
           </div>
         <% end %>
       </li>
