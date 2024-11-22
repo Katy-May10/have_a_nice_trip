@@ -1,27 +1,32 @@
-<%= render "shared/header"%>
-
-<%# 持ち物リストトップ %>
 <div class="main">
-  <div class="prepare-title">
-    <h3>持ち物リスト</h3>
-  </div>
-  <div class="container-prepare">
-    <div class="prepares">
-      <% if user_signed_in? && current_user.id %>
-        <%= form_with(model: @prepare, local: true) do |form| %>
-          <%= form.text_area :item, placeholder: "持ち物を記入する", rows: "1"%>
-          <%= form.submit "保存する"%>
-        <% end %>
-      <% end %>
+  <%# ページイメージ画像 %>
+  <%= image_tag "prepare-logo.png", class:"logo-image" %>
 
-      <%= form_with model: @prepare, local: true do |form| %>
-        <% @prepares.each do |prepare| %>
-          <p>
-            <%= form.check_box prepare %>
-            <%= prepare.item %>
-          </p>
-        <% end %>
-      <% end %>
+  <%# 持ち物リストタイトル %>
+  <div class="main-title">
+    <div class="index-title">
+      持ち物リスト
+      <%= image_tag "under-line.png", class:"underline-image" %>
     </div>
   </div>
+  <%# 持ち物一覧 %>
+  <div class="add-data">
+    <% if user_signed_in? && current_user.id %>
+      <%= form_with(model: @prepare, local: true) do |form| %>
+        <%= form.text_area :item, placeholder: "持ち物を記入する", rows: "1", class: "fill-in-form" %>
+        <%= form.submit "保存する", class: "save-btn" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="each-lists">
+    <%= form_with model: @prepare, local: true do |form| %>
+      <% @prepares.each do |prepare| %>
+        <p>
+          <%= form.check_box prepare %>
+          <%= prepare.item %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+  <%= render "shared/footer" %>
 </div>

@@ -11,23 +11,23 @@
       <%= @itinerary.arrival %>
     </div>
   </div>
-  <div class="container">
-    <div class="add-data">
-      <% if user_signed_in? && current_user.id %>
-        <%= form_with(model: [@itinerary, @plan], local: true) do |form| %>
-          <%= form.text_area :time, placeholder: "10:00~11:00", rows: "1"%>
-          <%= form.text_area :content, placeholder: "東京駅→大阪　新幹線で移動" %>
-          <%= form.submit "保存する"%>
-        <% end %>
-      <% end %>
 
-      <h3>スケジュール</h3>
-      <% @plans.each do |plan| %>
-        <p>
-          <%= plan.time %>
-          <%= plan.content %>
-        </p>
+  <%# 書く旅行スケジュールを表示させる %>
+  <div class="add-data">
+    <% if user_signed_in? && current_user.id %>
+      <%= form_with(model: [@itinerary, @plan], local: true) do |form| %>
+        <%= form.text_area :time, placeholder: "10:00~11:00", rows: "1", class: "fill-in-form"%>
+        <%= form.text_area :content, placeholder: "東京駅→大阪　新幹線で移動", class: "fill-in-form" %>
+        <%= form.submit "保存する", class:"save-btn"%>
       <% end %>
-    </div>
+    <% end %>
+
+    <h3>スケジュール</h3>
+    <% @plans.each do |plan| %>
+      <p>
+        <%= plan.time %>
+        <%= plan.content %>
+      </p>
+    <% end %>
   </div>
 </div>

@@ -1,5 +1,8 @@
-<%= render "shared/header" %>
 <div class="main">
+  <header class="header-top">
+    <%= image_tag "header-line.png", class:"header-line" %>
+  </header>
+
   <div class="main-image">
     <%= image_tag "top-image.png", class:"top-image" %>
   </div>
@@ -19,13 +22,16 @@
     <%# メイン機能 %>
     <div class="top-page-main">
       <ul class="main-contents">
-        <li><%= link_to "スケジュールを立てる", itineraries_path, class: "itinerary-content" %></li><br>
-        <li><%= link_to "行きたい場所リスト", lists_path, class: "list-content" %></li><br>
-        <li><%= link_to "持ち物リスト", prepares_path, class: "prepare-content" %></li><br>
-        <li><%= link_to "お土産リスト", souvenirs_path, class: "souvenir-content" %></li><br>
-        <li><%= link_to "フォトブック", "#", class: "record-content" %></li><br>
-
+        <li><%= link_to "スケジュールを立てる", itineraries_path, class: "itinerary-content" %></li><br><br>
+        <li><%= link_to "行きたい場所リスト", lists_path, class: "list-content" %></li><br><br>
+        <li><%= link_to "持ち物リスト", prepares_path, class: "link-content" %></li><br><br>
+        <li><%= link_to "お土産リスト", souvenirs_path, class: "link-content" %></li><br><br>
+        <li><%= link_to "フォトブック", "#", class: "link-content" %></li><br><br>
       </ul>
     </div>
   </div>
+
+  <footer class="footer-top">
+    <div class="footer">©︎Have a nice trip!</div>
+  </footer>
 </div>

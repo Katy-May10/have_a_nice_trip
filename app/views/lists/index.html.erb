@@ -1,23 +1,24 @@
-<%= render "shared/header"%>
 <div class="main">
   <%# ページイメージ画像 %>
   <%= image_tag "list-logo.png", class:"logo-image" %>
 
   <%# トップ %>
-  <div class="index-title">
-    行きたい場所リスト一覧
-  </div>
-    <%= link_to new_list_path, class: "add-list" do %>
-      <i class="fa-solid fa-plus">新規リスト作成</i>
-    <% end %>
+  <div class="main-title">
+    <div class="index-title">
+      行きたい場所リスト
+      <%= image_tag "under-line.png", class:"underline-image" %>
+    </div>
+      <%= link_to new_list_path, class: "add-list" do %>
+        <i class="fa-solid fa-plus">新規リスト作成</i>
+      <% end %>
 
-  <%# 行きたい場所をすべて表示させる %>
+    <%# 行きたい場所をすべて表示させる %>
     <ul class="index-lists">
       <% @lists.each do |list| %>
-      <li class="list">
+      <li class="lists">
         <%= link_to list_path(list) do %>
         <div class="image-container">
-          <%= image_tag "post-it.png", class:"blue-post-it" %>
+          <%= image_tag "post-it.png", size: "150x150", class:"blue-post-it" %>
           <div class="text-overlay">
             <%= list.sightseeing %>
           </div>
@@ -25,4 +26,6 @@
       </li>
       <% end %>
     </ul>
+    <%= render "shared/footer" %>
+  </div>
 </div>

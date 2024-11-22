@@ -1,23 +1,25 @@
 <div class="main">
   <%# ページイメージ画像 %>
-    <%= image_tag "list-logo.png", class:"logo-image" %>
+  <%= link_to(lists_path, class: "top-btn") do %>
+    <%= image_tag "list-logo.png", size: "100x100", class:"logo-image" %>
+  <% end %>
 
-  <%# 行きたい場所を追加する %>
   <div class="main-title">
+    <%# タイトル %>
+    <div class="show-title">
+      <%= @list.sightseeing %>
+      <%= image_tag "under-line.png", class:"underline-image" %>
+    </div>
+    <%# 行きたい場所を追加する %>
     <div class="add-data">
       <% if user_signed_in? && current_user.id %>
         <%= form_with(model: [@list, @spot], local: true) do |form| %>
-          <%= form.text_area :suggestion, placeholder: "行きたい場所を入力", rows: "1"%>
-          <%= form.submit "保存する"%>
+          <%= form.text_area :suggestion, placeholder: "行きたい場所を入力", rows: "1", class: "fill-in-form"%>
+          <%= form.submit "追加する", class: "save-btn"%>
         <% end %>
       <% end %>
-    </div>
-
+    </div>    
     <%# 行きたい場所をすべて表示させる %>
-    <div class="show-title">
-      <%= @list.sightseeing %>
-    </div>
-    <%= image_tag "under-line.png", class:"underline-image" %>
     <div class="each-lists">
       <% @spots.each do |spot| %>
         <div class="each-list">
@@ -26,4 +28,5 @@
       <% end %>
     </div>
   </div>
+  <%= render "shared/footer" %>
 </div>
