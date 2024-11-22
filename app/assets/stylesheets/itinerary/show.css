@@ -10,15 +10,38 @@
 
 /* 行きたい場所リストと共通 */
 .show-title{
+  height: 10vh;
   font-size: 24px;
-  margin-top: 15px;
 }
 
 .underline-image{
   width: 100vw;
-  height: 6vh;
+  height: 5vh;
+}
+
+.each-lists{
+  height: 50vh;
 }
 
 .each-list{
   margin: 10px 0;
+}
+
+.add-data{
+  height: 5vh;
+}
+
+.fill-in-form{
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.save-btn{
+  background-color: #93C7CB; /* Green background */
+  color: black; /* White text */
+  padding: 5px 10px; /* Padding for a larger button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 14px; /* Adjust font size */
 }
