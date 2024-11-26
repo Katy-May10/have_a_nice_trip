@@ -22,6 +22,6 @@ class RecordsController < ApplicationController
 
   private
   def record_params
-    params.require(:record).permit(:title).merge(user_id: current_user.id)
+    params.require(:record).permit(:title, :images).merge(user_id: current_user.id)
   end
 end
