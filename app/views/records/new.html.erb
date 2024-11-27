@@ -4,11 +4,17 @@
   <div class="list-title">
     フォトブックを作成する
   </div>
-  <%= form_with model: @record, local: true do |f| %>
+  <%= form_with model: @record, id: 'new_record', local: true do |f| %>
     <div class="fill-in-form">
       <div class="list-form">
         フォトブックのタイトル
         <%= f.text_area :title, class:"list-text", id:"title", placeholder:"例）沖縄旅行の思い出2024" %>
+      </div>
+      <div class="album-pictures">
+        <div id="previews"></div>
+        <div class="click-upload">
+          <%= f.file_field :images, id:"item-image" %>
+        </div>
       </div>
       <div class="list-button">
         <%= f.submit "作成する", class:"save-btn"%>
