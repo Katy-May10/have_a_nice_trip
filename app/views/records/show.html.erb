@@ -5,7 +5,9 @@
   <% end %>
 
   <%# トップ %>
-  <div class="album">
+    <div class="show-title">
+      <%= @record.title %>
+    </div>
     <div class="photo-left">
       <%= image_tag "picture_left.png", size: "200x200" %>
     </div>
@@ -17,5 +19,4 @@
     </div>
 
   <%= render "shared/footer" %>
-  </div>
 </div>
