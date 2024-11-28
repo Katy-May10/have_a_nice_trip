@@ -1,6 +1,15 @@
-.main{
+#previews {
+  display: flex;
+}
+
+.preview{
+  margin-right: 30px;
+}
+
+/* 画像削除用ボタン */
+.image-delete-button {
   text-align: center;
-  font-family: "Zen Kurenaido", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  border: solid 1px;
+  cursor: pointer;
+  margin-bottom: 5px;
 }
