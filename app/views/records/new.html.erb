@@ -1,0 +1,27 @@
+<div class="main">
+  <%# ページイメージ画像 %>
+  <%= link_to(records_path, class: "top-btn") do %>
+    <%= image_tag "memory-logo.png", size: "100x100", class:"logo-image" %>
+  <% end %>
+
+  <div class="list-title">
+    フォトブックを作成する
+  </div>
+  <%= form_with model: @record, id: 'new_record', local: true do |f| %>
+    <div class="fill-in-form">
+      <div class="list-form">
+        フォトブックのタイトル
+        <%= f.text_area :title, class:"list-text", id:"title", placeholder:"例）沖縄旅行の思い出2024" %>
+      </div>
+      <div class="album-pictures">
+        <div id="previews"></div>
+        <div class="click-upload">
+          <%= f.file_field :images, name: "record[images][]", data: {index: 0} %>
+        </div>
+      </div>
+      <div class="list-button">
+        <%= f.submit "作成する", class:"save-btn"%>
+      </div>
+    </div>
+  <% end %>
+</div>

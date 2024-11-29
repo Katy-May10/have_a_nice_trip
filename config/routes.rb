@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
   resources :prepares, only: [:index, :create]
   resources :souvenirs, only: [:index, :create]
+  resources :records, only: [:index, :new, :create, :show]
 end

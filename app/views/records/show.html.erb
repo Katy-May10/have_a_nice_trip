@@ -1,0 +1,25 @@
+<div class="main">
+  <%# ページイメージ画像 %>
+  <%= link_to(records_path, class: "top-btn") do %>
+    <%= image_tag "memory-logo.png", size: "100x100", class:"logo-image" %>
+  <% end %>
+
+  <%# トップ %>
+  <div class="main-title">
+    <div class="show-title">
+      <%= @record.title %>
+    </div>
+    <div class="album-main">
+      <div class="photo-left">
+        <%= image_tag @record.images[0], size: "200x200" %>
+      </div>
+      <div class="photo-right">
+        <%= image_tag @record.images[1], size: "200x200" %>
+      </div>
+      <div class="photo-left">
+        <%= image_tag @record.images[2], size: "200x200" %>
+      </div>
+    </div>
+  </div>
+  <%= render "shared/footer" %>
+</div>

@@ -1,26 +1,26 @@
 <div class="main">
   <%# ページイメージ画像 %>
-  <%= image_tag "list-logo.png", class:"logo-image" %>
+  <%= image_tag "memory-logo.png", class:"logo-image" %>
 
   <%# トップ %>
   <div class="main-title">
     <div class="index-title">
-      行きたい場所リスト
+      フォトブック一覧
       <%= image_tag "under-line.png", class:"underline-image" %>
     </div>
-      <%= link_to new_list_path, class: "add-list" do %>
+      <%= link_to new_record_path, class: "add-list" do %>
         <i class="fa-solid fa-plus">新規リスト作成</i>
       <% end %>
 
     <%# 行きたい場所をすべて表示させる %>
     <ul class="index-lists">
-      <% @lists.each do |list| %>
+      <% @records.each do |record| %>
       <li class="lists">
-        <%= link_to list_path(list) do %>
+        <%= link_to record_path(record) do %>
         <div class="image-container">
           <%= image_tag "post-it.png", class:"blue-post-it" %>
           <div class="text-overlay">
-            <%= list.sightseeing %>
+            <%= record.title %>
           </div>
         <% end %>
       </li>

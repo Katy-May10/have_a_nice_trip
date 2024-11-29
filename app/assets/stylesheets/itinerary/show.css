@@ -45,3 +45,26 @@
   cursor: pointer; /* Pointer cursor on hover */
   font-size: 14px; /* Adjust font size */
 }
+
+/* フォトブック */
+.photo-left{
+  text-align: left;
+  margin-left: 30px;
+}
+
+.photo-right{
+  text-align: right;
+  margin-right: 30px;
+}
+
+.album-title{
+  text-align: left;
+  margin-left: 40px;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  /* 縦横比を保ったまま、画像を縦横100pxのサイズに収めるプロパティです */
+  object-fit: contain;
+}
