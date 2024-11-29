@@ -1,5 +1,6 @@
 /* スケジュール一覧 */
 .date-info{
+  font-size: 9px;
   text-decoration: none;
 }
 
@@ -39,4 +40,9 @@
 
 .footer-image{
   height: 10vh;
+}
+
+.blue-post-it{
+  width: 150px;
+  height: 150px;
 }

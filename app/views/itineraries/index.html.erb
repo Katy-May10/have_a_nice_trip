@@ -1,26 +1,34 @@
-<%= render "shared/header"%>
 <div class="main">
-  <div class="index-title">
-    旅行計画一覧
-  </div>
-    <%= link_to new_itinerary_path, class: "add-list" do %>
-      <i class="fa-solid fa-plus">新規プラン</i>
-    <% end %>
+  <%# ページイメージ画像 %>
+  <%= image_tag "schedule-logo.png", class:"logo-image" %>
+
+  <div class="main-title">
+    <div class="index-title">
+      旅行計画一覧
+      <%= image_tag "under-line.png", class:"underline-image" %>
+    </div>
+      <%= link_to new_itinerary_path, class: "add-list" do %>
+        <i class="fa-solid fa-plus">新規プラン</i>
+      <% end %>
 
     <ul class="index-lists">
       <% @itineraries.each do |itinerary| %>
-      <li class="list">
+      <li class="lists">
         <%= link_to itinerary_path(itinerary) do %>
-        <div class="itinerary-info">
-          <div class="location-info">
-            <i class="fa-solid fa-calendar-day"><%= itinerary.location %></i>
-          </div>
-          <div class="date-info">
-            <%= itinerary.departure %>-
-            <%= itinerary.arrival %>
+        <div class="image-container">
+          <%= image_tag "post-it.png", class:"blue-post-it" %>
+          <div class="text-overlay">
+            <%= itinerary.location %>
+            <div class="date-info">
+              <%= itinerary.departure %>-<br>
+              <%= itinerary.arrival %>
+            </div>
           </div>
         <% end %>
       </li>
       <% end %>
     </ul>
+
+    <%= render "shared/footer" %>
+  </div>
 </div>
