@@ -1,33 +1,40 @@
-<%= render "shared/header"%>
+<div class="main">
+  <%# ページイメージ画像 %>
+  <%= image_tag "schedule-logo.png", class:"logo-image" %>
 
 <%# スケジュール全体を表示 %>
-<div class="main">
   <div class="main-title">
     <div class="show-title">
       <%= @itinerary.location %>
-    </div>
-    <div class="date-title">
-      <%= @itinerary.departure%>-
-      <%= @itinerary.arrival %>
+      <div class="date-title">
+        <%= @itinerary.departure%>~
+        <%= @itinerary.arrival %>
+        <%= image_tag "under-line.png", class:"underline-image" %>
+      </div>
     </div>
   </div>
 
-  <%# 書く旅行スケジュールを表示させる %>
-  <div class="add-data">
-    <% if user_signed_in? && current_user.id %>
-      <%= form_with(model: [@itinerary, @plan], local: true) do |form| %>
-        <%= form.text_area :time, placeholder: "10:00~11:00", rows: "1", class: "fill-in-form"%>
-        <%= form.text_area :content, placeholder: "東京駅→大阪　新幹線で移動", class: "fill-in-form" %>
-        <%= form.submit "保存する", class:"save-btn"%>
+  <%# 各旅行スケジュールを表示させる %>
+  <div class="main-contents">
+    <div class="add-data">
+      <% if user_signed_in? && current_user.id %>
+        <%= form_with(model: [@itinerary, @plan], local: true) do |form| %>
+          <%= form.text_area :time, placeholder: "10:00~11:00", rows: "1", class: "fill-in-form"%>
+          <%= form.text_area :content, placeholder: "東京駅→大阪　新幹線で移動", class: "fill-in-form" %>
+          <%= form.submit "保存する", class:"save-btn"%>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
 
-    <h3>スケジュール</h3>
-    <% @plans.each do |plan| %>
-      <p>
-        <%= plan.time %>
-        <%= plan.content %>
-      </p>
-    <% end %>
+    <div class="schedule-title">今日の予定</div>
+      <div class="show-main-contents">
+        <% @plans.each do |plan| %>
+        <p>
+          <%= plan.time %>
+          <%= plan.content %>
+        </p>
+        <% end %>
+      </div>
+    <%= render "shared/footer" %>
   </div>
 </div>
