@@ -16,6 +16,6 @@ class PlansController < ApplicationController
   private
 
   def plan_params
-    params.require(:plan).permit(:time, :content).merge(user_id: current_user.id, itinerary_id: params[:itinerary_id])
+    params.require(:plan).permit(:time, :content, :icon_id).merge(user_id: current_user.id, itinerary_id: params[:itinerary_id])
   end
 end
