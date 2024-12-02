@@ -8,7 +8,45 @@
   margin: 10px 0 0 0;
 }
 
+.main-contents{
+  height: 50vh;
+}
 
+.schedule-title{
+  height: 10vh;
+}
+
+.show-main-contents{
+  height: 50vh;
+}
+
+.show-main-content{
+  display: flex;
+  margin: 5px;
+}
+
+.time-title{
+  margin: 1px 5px 1px 20px;
+}
+
+.content-title{
+  margin: 1px 20px 1px 5px;
+}
+
+.icon {
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+}
+.icon-select {
+  margin-top: 10px;
+}
+
+.icon-display i {
+  font-size: 15px; /* Icon size */
+  margin-right: 8px; /* Space between icon and text */
+  color: #333; /* Icon color */
+}
 
 /* 行きたい場所リストと共通 */
 .show-title{
@@ -30,7 +68,7 @@
 }
 
 .add-data{
-  height: 5vh;
+  height: 15vh;
 }
 
 .fill-in-form{
