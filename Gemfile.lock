@@ -102,6 +102,8 @@ GEM
     ffi (1.17.0-x86-linux-gnu)
     ffi (1.17.0-x86_64-darwin)
     ffi (1.17.0-x86_64-linux-gnu)
+    font-awesome-sass (6.5.2)
+      sassc (~> 2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.6)
@@ -216,6 +218,8 @@ GEM
       ffi (~> 1.12)
       logger
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -269,6 +273,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  font-awesome-sass (~> 6.0)
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
