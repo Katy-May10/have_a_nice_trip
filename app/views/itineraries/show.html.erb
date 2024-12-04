@@ -27,45 +27,44 @@
         <% end %>
       <% end %>
     </div>
-    <div class="schedule-title">今日の予定</div>
+    <div class="schedule-title">今日の予定
       <div class="show-main-contents">
         <% @plans.each do |plan| %>
-          <div class="show-main-content">
-            <div class="time-title">
-              ● <%= plan.time %>
-            </div>
+          <p>
             <div class="icon-display">
-              <% case plan.icon_id %>
-              <% when "plane"%>
-                <i class="fa-solid fa-plane"></i>
-              <% when "train" %>
-                <i class="fa-solid fa-train"></i>
-              <% when "car"%>
-                <i class="fa-solid fa-car"></i>
-              <% when "walk" %>
-                <i class="fa-solid fa-person-walking"></i>
-              <% when "restaurant" %>
-                <i class="fa-solid fa-utensils"></i>
-              <% when "cafe"%>
-                <i class="fa-solid fa-mug-saucer"></i>
-              <% when "hotel" %>
-                <i class="fa-solid fa-hotel"></i>
-              <% when "sightseeing" %>
-                <i class="fa-solid fa-camera"></i>
-              <% when "shopping"%>
-                <i class="fa-solid fa-store"></i>
-              <% when "hotspring"%>
-                <i class="fa-solid fa-hot-tub-person"></i>
-              <% when "rest"%>
-                <i class="fa-solid fa-restroom"></i>
-              <% end %>
+              <%= plan.time %>　
+                <% case plan.icon_id %>
+                <% when "plane"%>
+                  <i class="fa-solid fa-plane"></i>
+                <% when "train" %>
+                  <i class="fa-solid fa-train"></i>
+                <% when "car"%>
+                  <i class="fa-solid fa-car"></i>
+                <% when "walk" %>
+                  <i class="fa-solid fa-person-walking"></i>
+                <% when "restaurant" %>
+                  <i class="fa-solid fa-utensils"></i>
+                <% when "cafe"%>
+                  <i class="fa-solid fa-mug-saucer"></i>
+                <% when "hotel" %>
+                  <i class="fa-solid fa-hotel"></i>
+                <% when "sightseeing" %>
+                  <i class="fa-solid fa-camera"></i>
+                <% when "shopping"%>
+                  <i class="fa-solid fa-store"></i>
+                <% when "hotspring"%>
+                  <i class="fa-solid fa-hot-tub-person"></i>
+                <% when "rest"%>
+                  <i class="fa-solid fa-restroom"></i>
+                <% end %>
             </div>
             <div class="content-title">
               <%= plan.content %>
             </div>
-          </div>
+          </p>
         <% end %>
+        <%= render "shared/footer" %>
       </div>
-    <%= render "shared/footer" %>
+    </div>
   </div>
 </div>
