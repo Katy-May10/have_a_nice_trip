@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <%# 各旅行スケジュールを表示させる %>
+  <%# 旅行スケジュールを追加する %>
   <div class="main-contents">
     <div class="add-data">
       <% if user_signed_in? && current_user.id %>
@@ -27,44 +27,52 @@
         <% end %>
       <% end %>
     </div>
-    <div class="schedule-title">今日の予定
-      <div class="show-main-contents">
-        <% @plans.each do |plan| %>
+
+    <%# 旅行スケジュールを表示させる %>
+    <div class="schedule-title">
+      今日の予定
+    </div>
+    <div class="show-main-contents">
+      <% @plans.each do |plan| %>
+        <div class="icon-display">
           <p>
-            <div class="icon-display">
-              <%= plan.time %>　
-                <% case plan.icon_id %>
-                <% when "plane"%>
-                  <i class="fa-solid fa-plane"></i>
-                <% when "train" %>
-                  <i class="fa-solid fa-train"></i>
-                <% when "car"%>
-                  <i class="fa-solid fa-car"></i>
-                <% when "walk" %>
-                  <i class="fa-solid fa-person-walking"></i>
-                <% when "restaurant" %>
-                  <i class="fa-solid fa-utensils"></i>
-                <% when "cafe"%>
-                  <i class="fa-solid fa-mug-saucer"></i>
-                <% when "hotel" %>
-                  <i class="fa-solid fa-hotel"></i>
-                <% when "sightseeing" %>
-                  <i class="fa-solid fa-camera"></i>
-                <% when "shopping"%>
-                  <i class="fa-solid fa-store"></i>
-                <% when "hotspring"%>
-                  <i class="fa-solid fa-hot-tub-person"></i>
-                <% when "rest"%>
-                  <i class="fa-solid fa-restroom"></i>
-                <% end %>
-            </div>
-            <div class="content-title">
+            <%# スケジュールの行動時間を表示させる %>
+            <%= plan.time %>
+
+              <%# スケジュールのアイコンを表示させる %>
+              <% case plan.icon_id %>
+              <% when "plane"%>
+                <i class="fa-solid fa-plane"></i>
+              <% when "train" %>
+                <i class="fa-solid fa-train"></i>
+              <% when "car"%>
+                <i class="fa-solid fa-car"></i>
+              <% when "walk" %>
+                <i class="fa-solid fa-person-walking"></i>
+              <% when "restaurant" %>
+                <i class="fa-solid fa-utensils"></i>
+              <% when "cafe"%>
+                <i class="fa-solid fa-mug-saucer"></i>
+              <% when "hotel" %>
+                <i class="fa-solid fa-hotel"></i>
+              <% when "sightseeing" %>
+                <i class="fa-solid fa-camera"></i>
+              <% when "shopping"%>
+                <i class="fa-solid fa-store"></i>
+              <% when "hotspring"%>
+                <i class="fa-solid fa-hot-tub-person"></i>
+              <% when "rest"%>
+                <i class="fa-solid fa-restroom"></i>
+              <% end %>
+
+              <%# スケジュールの行動内容を表示させる %>
               <%= plan.content %>
-            </div>
+              <%= image_tag "arrow-down.png", class:"arrow-down-image" %>
           </p>
-        <% end %>
-        <%= render "shared/footer" %>
-      </div>
+        </div>
+      <% end %>
+      -Have a nice trip!-
+      <%= render "shared/footer" %>
     </div>
   </div>
 </div>

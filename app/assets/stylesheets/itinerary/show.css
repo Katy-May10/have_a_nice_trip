@@ -13,22 +13,13 @@
 }
 
 .schedule-title{
-  height: 10vh;
+  height: 5vh;
+  font-size: 20px;
 }
 
 .show-main-contents{
   height: 50vh;
-  text-align: center;
-}
-
-.show-main-contents p{
-  display: inline-block;
-  text-align: center;
   margin: 5px;
-}
-
-.content-title{
-  margin: 1px 20px 1px 5px;
 }
 
 .icon {
@@ -37,18 +28,20 @@
   margin-right: 5px;
 }
 .icon-select {
+  border-color: #93C7CB;
   margin-top: 10px;
-}
-
-.icon-display p {
-  display: flex;
-  margin: 1px 5px 1px 20px;
+  text-align: center;
 }
 
 .icon-display i {
   font-size: 15px;
   margin-right: 8px;
   color: #333;
+}
+
+.arrow-down-image{
+  height: 5vh;
+  width: 100vw;
 }
 
 /* 行きたい場所リストと共通 */
@@ -76,6 +69,7 @@
 }
 
 .fill-in-form{
+  border-color: #93C7CB;
   border-radius: 5px;
   padding: 5px 10px;
 }
