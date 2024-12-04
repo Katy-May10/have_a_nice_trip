@@ -22,6 +22,18 @@ class ItinerariesController < ApplicationController
     @plans = @itinerary.plans.includes(:user)
   end
 
+  def download
+    @itinerary = Itinerary.find(params[:id]) 
+  
+    respond_to do |format|
+      format.pdf do
+        render pdf: "itinerary",
+               template: "itineraries/show.html.erb",
+               disposition: "attachment"
+      end
+    end
+  end
+
   private
 
   def itinerary_params
