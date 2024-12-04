@@ -79,3 +79,6 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 
 gem 'font-awesome-sass', '~> 6.0'
+
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
