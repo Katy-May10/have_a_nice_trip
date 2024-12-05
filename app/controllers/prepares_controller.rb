@@ -1,4 +1,6 @@
 class PreparesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @prepares = Prepare.all
     @prepare = Prepare.new

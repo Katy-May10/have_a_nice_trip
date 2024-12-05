@@ -1,4 +1,5 @@
 class ItinerariesController < ApplicationController
+  before_action :authenticate_user!
   def index
     @itineraries = Itinerary.all
   end

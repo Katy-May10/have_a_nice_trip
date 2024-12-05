@@ -1,4 +1,6 @@
 class SouvenirsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @souvenirs = Souvenir.all
     @souvenir = Souvenir.new
