@@ -2,12 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root "pages#home"
   resources :itineraries, only: [:index, :new, :create, :show] do
-    resources :plans, only: [:create, :update]
-  end
-  resources :itineraries do
     member do
-      get :download
+      get :download, defaults: { format: :pdf }
     end
+
+    resources :plans, only: [:create, :update]
   end
   resources :lists, only: [:index, :new, :create, :show] do
     resources :spots, only: [:create]
