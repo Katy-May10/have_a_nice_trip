@@ -23,6 +23,10 @@ class ItinerariesController < ApplicationController
     @plans = @itinerary.plans.includes(:user)
   end
 
+  def edit
+    @itinerary = Itinerary.find(params[:id])
+  end
+
   def download
     @itinerary = Itinerary.find(params[:id]) 
   
