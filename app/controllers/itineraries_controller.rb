@@ -36,7 +36,7 @@ class ItinerariesController < ApplicationController
                template: "itineraries/show.html.erb",
                disposition: "attachment"
       end
-      format.any { head :not_acceptable } # Return 406 for unsupported formats
+      format.any { head :not_acceptable }
     end
   end
 

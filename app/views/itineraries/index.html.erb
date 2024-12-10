@@ -14,16 +14,16 @@
     <ul class="index-lists">
       <% @itineraries.each do |itinerary| %>
       <li class="lists">
-        <%= link_to itinerary_path(itinerary) do %>
         <div class="image-container">
           <%= image_tag "post-it.png", class:"blue-post-it" %>
+          <div class="top-text-overlay">
+            <%= link_to edit_itinerary_path(itinerary.id) do%>
+              <i class="fa-solid fa-pen-to-square"></i>
+            <% end %>
+          </div>
+          <%= link_to itinerary_path(itinerary) do %>
           <div class="text-overlay">
             <%= itinerary.location %>
-            <div class="edit-button">
-              <%= link_to edit_itinerary_path(itinerary.id) do%>
-                <i class="fa-solid fa-pen-to-square"></i>
-              <% end %>
-            </div>
             <div class="date-info">
               <i class="fa-solid fa-plane-departure">:<%= itinerary.departure %></i><br>
               <i class="fa-solid fa-plane-arrival">:<%= itinerary.arrival %></i>

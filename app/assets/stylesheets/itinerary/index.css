@@ -24,6 +24,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.index-lists a{
   text-decoration: none;
 }
 
@@ -48,5 +51,6 @@
 }
 
 .edit-button{
-  text-decoration: none;
+  text-align: right;
+  color: black;
 }
