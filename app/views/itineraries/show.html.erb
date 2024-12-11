@@ -39,9 +39,9 @@
         <div class="icon-display">
           <p>
             <%# スケジュールの行動時間を表示させる %>
-            <%= plan.time %>
+              <%= plan.time %>
 
-              <%# スケジュールのアイコンを表示させる %>
+            <%# スケジュールのアイコンを表示させる %>
               <% case plan.icon_id %>
               <% when "plane"%>
                 <i class="fa-solid fa-plane"></i>
@@ -67,7 +67,7 @@
                 <i class="fa-solid fa-restroom"></i>
               <% end %>
 
-              <%# スケジュールの行動内容を表示させる %>
+            <%# スケジュールの行動内容を表示させる %>
               <%= plan.content %>
               <%= image_tag "arrow-down.png", class:"arrow-down-image" %>
           </p>
