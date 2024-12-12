@@ -27,6 +27,15 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.find(params[:id])
   end
 
+  def update
+    @itinerary = Itinerary.find(params[:id])
+    if @itinerary.update(itinerary_params)
+      redirect_to itineraries_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def download
     @itinerary = Itinerary.find(params[:id]) 
   
