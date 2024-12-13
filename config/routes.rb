@@ -5,13 +5,13 @@ Rails.application.routes.draw do
     member do
       get :download, defaults: { format: :pdf }
     end
-    resources :plans, only: [:create, :update, :delete]
+    resources :plans, only: [:create, :update, :destroy]
   end
   resources :lists do
-    resources :spots, only: [:create, :update, :delete]
+    resources :spots, only: [:create, :update, :destroy]
   end
-  resources :prepares, only: [:index, :create, :update, :delete]
-  resources :souvenirs, only: [:index, :create, :update, :delete]
+  resources :prepares, only: [:index, :create, :update, :destroy]
+  resources :souvenirs, only: [:index, :create, :update, :destroy]
   resources :records
   get 'itineraries/download', to: 'itineraries#download'
 end
