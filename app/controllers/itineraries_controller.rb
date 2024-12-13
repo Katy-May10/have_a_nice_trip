@@ -36,6 +36,12 @@ class ItinerariesController < ApplicationController
     end
   end
 
+  def destroy
+    @itinerary = Itinerary.find(params[:id])
+    @itinerary.destroy
+    redirect_to itineraries_path
+  end
+
   def download
     @itinerary = Itinerary.find(params[:id]) 
   
