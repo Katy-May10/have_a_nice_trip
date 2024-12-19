@@ -11,7 +11,15 @@ class PlansController < ApplicationController
   end
 
   def update
-    @plan = Plan.find[:id]
+    @itinerary = Itinerary.find(params[:itinerary_id])
+    @plan = Plan.find(params[:id])
+    redirect_to itinerary_path(@plan.itinerary.id)
+  end
+
+  def destroy
+    @itinerary = Itinerary.find(params[:itinerary_id])
+    @plan = Plan.find(params[:id])
+    @plan.destroy
     redirect_to itinerary_path(@plan.itinerary.id)
   end
 
