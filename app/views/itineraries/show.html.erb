@@ -1,7 +1,8 @@
 <div class="main">
   <%# ページイメージ画像 %>
-  <%= image_tag "schedule-logo.png", class:"logo-image" %>
-
+  <%= link_to(itineraries_path, class: "top-btn") do %>
+    <%= image_tag "schedule-logo.png", size: "100x100", class:"logo-image" %>
+  <% end %>
 <%# スケジュール全体を表示 %>
   <div class="main-title">
     <div class="show-title">
@@ -21,7 +22,7 @@
     <div class="add-data">
       <% if user_signed_in? && current_user.id %>
         <%= form_with(model: [@itinerary, @plan], local: true) do |form| %>
-          <%= form.text_area :time, placeholder: "10:00~11:00", rows: "1", class: "fill-in-form"%><br>
+          <%= form.text_area :time, placeholder: "08:00-10:00", rows: "1", class: "fill-in-form"%><br>
           <%= form.text_area :content, placeholder: "東京駅→大阪　新幹線で移動", rows: "1", class: "fill-in-form" %><br>
           <%= form.label :icon_id, "アイコン選択" %>
           <%= form.select :icon_id, Plan.icon_ids.keys.map { |key| [key.humanize, key] }, {}, class: "icon-select"%><br>
@@ -69,7 +70,9 @@
 
             <%# スケジュールの行動内容を表示させる %>
               <%= plan.content %>
-              <i class="fa-solid fa-delete-left"></i>
+              <%= link_to itinerary_plan_path(@itinerary, plan.id), data: {turbo_method: :delete} do %>
+                <i class="fa-solid fa-delete-left"></i>
+              <% end %>
               <%= image_tag "arrow-down.png", class:"arrow-down-image" %>
           </p>
         </div>
