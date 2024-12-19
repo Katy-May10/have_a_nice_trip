@@ -20,7 +20,7 @@ class ItinerariesController < ApplicationController
   def show
     @itinerary = Itinerary.find(params[:id])
     @plan = Plan.new
-    @plans = @itinerary.plans.includes(:user)
+    @plans = @itinerary.plans.includes(:user).order("time ASC")
   end
 
   def edit
